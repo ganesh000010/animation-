@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Gift</title>
+
+    <!-- handwriting font -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+    <button class="close" onclick="goBack()">✖</button>
+
+    <div class="content">
+        <div class="gif-column">
+
+        <img src="hello2.gif" class="side-gif">
+        <img src="hello2.gif" class="side-gif">
+        </div>
+        
+        <!-- paper message area -->
+        <div class="paper">
+            <p id="typingText"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function goBack() {
+    window.location.href = "index.html";
+}
+
+const text = `Even though miles are between us,
+you are always close to my heart.
+
+You make my bad days feel lighter
+just by being there.
+
+I am really lucky to have you.
+
+No distance can change what you mean to me.
+
+You are my forever,
+my reason to smile ❤️`;
+
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typingText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
+    }
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
